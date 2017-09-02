@@ -7,6 +7,8 @@ import android.view.Display;
 import java.util.HashMap;
 import java.util.Map;
 
+import ru.nikartm.android_object3dexample.constant.Constants;
+
 /**
  * @author Ivan Vodyasov on 02.09.2017.
  */
@@ -20,8 +22,8 @@ public class Utils {
 
         float width = size.x / density;
         float height = size.y / density;
-        displayDpi.put("width", width);
-        displayDpi.put("height", height);
+        displayDpi.put(Constants.WIDTH, width);
+        displayDpi.put(Constants.HEIGHT, height);
         return displayDpi;
     }
 

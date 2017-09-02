@@ -5,6 +5,7 @@ import min3d.core.RendererActivity;
 import min3d.parser.IParser;
 import min3d.parser.Parser;
 import min3d.vos.Light;
+import ru.nikartm.android_object3dexample.constant.Constants;
 
 /**
  * @author Ivan Vodyasov on 02.09.2017.
@@ -19,13 +20,12 @@ public class Image3DView extends RendererActivity {
         scene.lights().add(new Light());
 
         IParser myParser = Parser.createParser(Parser.Type.OBJ, getResources(),
-                "ru.nikartm.android_object3dexample:raw/penguin_obj", true);
+                Constants.RAW_PATH + "penguin_obj", true);
         if (myParser != null) {
             myParser.parse();
             object3D = myParser.getParsedObject();
             object3D.position().x = object3D.position().y = object3D.position().z = 0;
-            object3D.scale().x = object3D.scale().y = object3D.scale().z = .7f;
-//            object3D.rotation().y = 180;
+            object3D.scale().x = object3D.scale().y = object3D.scale().z = 1.5f;
             scene.addChild(object3D);
         }
 

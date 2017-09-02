@@ -7,6 +7,7 @@ import android.view.View;
 import java.util.Map;
 
 import min3d.core.Object3dContainer;
+import ru.nikartm.android_object3dexample.constant.Constants;
 import ru.nikartm.android_object3dexample.util.Utils;
 
 /**
@@ -17,8 +18,8 @@ public class Object3DTouchListener implements View.OnTouchListener {
 
     private static final float MAX_SCALE = 2f;
     private static final float MIN_SCALE = .1f;
-    private static final int DRAG = 1;
-    private static final int SCALE = 2;
+    private static final int DRAG   = 1;
+    private static final int SCALE  = 2;
     private static final int ROTATE = 3;
 
     private Object3dContainer object3D;
@@ -54,8 +55,8 @@ public class Object3DTouchListener implements View.OnTouchListener {
                     case DRAG:
                         x = event.getX();
                         y = event.getY();
-                        float deltaX = (x - touchedX) / (displayDpi.get("width"));
-                        float deltaY = (y - touchedY) / (displayDpi.get("height"));
+                        float deltaX = (x - touchedX) / (displayDpi.get(Constants.WIDTH));
+                        float deltaY = (y - touchedY) / (displayDpi.get(Constants.HEIGHT));
 
                         object3D.position().x = object3D.position().x + deltaX;
                         object3D.position().y = object3D.position().y - deltaY;
